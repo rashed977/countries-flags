@@ -10,15 +10,22 @@ myRequest.onreadystatechange=function(){
 
 
         for(let i=0; i<jsData.length; i++){
-
+            
             let div=document.createElement("div");
+
             let contName=document.createTextNode(jsData[i].name);
+            if(jsData[i].name!="Israel"){
+                
+            
+
+            
+            
             let contFlag=jsData[i].flag;
             let h1=document.createElement("h1");
             h1.appendChild(contName);
             let img=document.createElement("img");
             img.src=contFlag;
-          
+        
             div.appendChild(h1);
             div.appendChild(img);
 
@@ -29,14 +36,18 @@ myRequest.onreadystatechange=function(){
                 div.appendChild(span);
             }
             
+        }
 
+        else{
+            return
+        }
             let container=document.getElementById('container');   
             container.appendChild(div);
             document.body.appendChild(container);
-            
+        
 
 
-
+    
         }
     }
     
